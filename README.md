@@ -13,7 +13,7 @@ DB設計について
 | first_name_furigana      | string     | null: false               |
 | last_name                | string     | null: false               |
 | last_name_furigana       | string     | null: false               |
-| birthday_id              | date       | null: false               |
+| birthday                 | date       | null: false               |
 
 ### Association
 - has_many :items
@@ -25,13 +25,14 @@ DB設計について
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | name             | string     | null: false                    |
-| explanation      | string     | null: false                    |
-| category_id      | integer    | null: false, foreign_key: true |
-| status_id        | integer    | null: false, foreign_key: true |
-| delivery_free_id | integer    | null: false, foreign_key: true |
-| area_id          | integer    | null: false, foreign_key: true |
-| days_id          | integer    | null: false, foreign_key: true |
+| explanation      | text       | null: false                    |
+| category_id      | integer    | null: false                    |
+| status_id        | integer    | null: false                    |
+| delivery_free_id | integer    | null: false                    |
+| area_id          | integer    | null: false                    |
+| days_id          | integer    | null: false                    |
 | price            | integer    | null: false                    |
+| user_id          | integer    | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -42,7 +43,7 @@ DB設計について
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
-| text          | string     | null: false                    |
+| text          | text       | null: false                    |
 | user_id       | integer    | null: false, foreign_key: true |
 | item_id       | integer    | null: false, foreign_key: true |
 
