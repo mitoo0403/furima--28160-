@@ -4,16 +4,16 @@ DB設計について
 
 ## usersテーブル
 
-| Column             | Type       | Options                   |
-| ------------------ | ---------- | ------------------------- |
-| nickname           | string     | null: false               |
-| email              | string     | null: false, unique: true |
-| encrypted_password | string     | null: false               |
-| first_name         | string     | null: false               |
-| first_name(f)      | string     | null: false               |
-| last_name          | string     | null: false               |
-| last_name(f)       | string     | null: false               |
-| birthday           | date       | null: false               |
+| Column                   | Type       | Options                   |
+| ------------------------ | ---------- | ------------------------- |
+| nickname                 | string     | null: false               |
+| email                    | string     | null: false, unique: true |
+| encrypted_password       | string     | null: false               |
+| first_name               | string     | null: false               |
+| first_name_furigana      | string     | null: false               |
+| last_name                | string     | null: false               |
+| last_name_furigana       | string     | null: false               |
+| birthday_id              | date       | null: false               |
 
 ### Association
 - has_many :items
@@ -22,17 +22,16 @@ DB設計について
 
 ## itemsテーブル
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| image         | binary     | null: false                    |
-| name          | string     | null: false                    |
-| explanation   | string     | null: false                    |
-| category_id   | integer    | null: false, foreign_key: true |
-| status        | integer    | null: false, foreign_key: true |
-| delivery_free | integer    | null: false, foreign_key: true |
-| area          | integer    | null: false, foreign_key: true |
-| days          | integer    | null: false, foreign_key: true |
-| price         | integer    | null: false                    |
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| name             | string     | null: false                    |
+| explanation      | string     | null: false                    |
+| category_id      | integer    | null: false, foreign_key: true |
+| status_id        | integer    | null: false, foreign_key: true |
+| delivery_free_id | integer    | null: false, foreign_key: true |
+| area_id          | integer    | null: false, foreign_key: true |
+| days_id          | integer    | null: false, foreign_key: true |
+| price            | integer    | null: false                    |
 
 ### Association
 - belongs_to :user
@@ -71,6 +70,7 @@ DB設計について
 | address       | string      | null: false                    |
 | building_name | string      |                                |
 | tel           | string      | null: false                    |
+| order_id      | integer     | null: false, foreign_key: true |
 
 - belongs_to :order
 
