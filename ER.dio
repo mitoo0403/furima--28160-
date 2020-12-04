@@ -1,4 +1,4 @@
-<mxfile host="65bd71144e" modified="2020-12-02T07:01:46.667Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.1 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" etag="Mk-0wdOn-i7H5HF9xb_0" version="13.6.5">
+<mxfile host="65bd71144e" modified="2020-12-02T07:06:38.239Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.51.1 Chrome/83.0.4103.122 Electron/9.3.3 Safari/537.36" etag="rfxN9Jd5R-KENN-wmXrf" version="13.6.5">
     <diagram id="1mNayCW4qVJ5rQMS8sHm" name="ページ1">
         <mxGraphModel dx="621" dy="765" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
@@ -17,7 +17,7 @@
                         <Array as="points"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="5" value="image&lt;br&gt;name&lt;br&gt;explanation&lt;br&gt;category&lt;br&gt;status&lt;br&gt;delivery_fee&lt;br&gt;area&lt;br&gt;days&lt;br&gt;price&lt;br&gt;user_id" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                <mxCell id="5" value="image&lt;br&gt;name&lt;br&gt;explanation&lt;br&gt;category_id&lt;br&gt;status_id&lt;br&gt;delivery_fee_id&lt;br&gt;area_id&lt;br&gt;days_id&lt;br&gt;price&lt;br&gt;user_id" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="630" y="50" width="120" height="190" as="geometry"/>
                 </mxCell>
                 <mxCell id="6" value="items" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
