@@ -6,11 +6,6 @@ class Item < ApplicationRecord
   with_options presence: true do
     validates :name
     validates :explanation
-    validates :category_id
-    validates :status_id
-    validates :delivery_free_id
-    validates :area_id
-    validates :day_id
     validates :price, format: { with: Half_width_numbers }, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
   end
 
