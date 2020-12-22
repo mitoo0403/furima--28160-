@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 2020_12_10_112941) do
     t.integer "day_id"
     t.integer "price"
     t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
