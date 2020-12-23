@@ -32,6 +32,10 @@ class ItemsController < ApplicationController
 #     tweet.update(tweet_params)
 #   end
 
+def show
+  @item = Item.find(params[:id])
+end
+
 #   def show
 #     @comment = Comment.new
 #     @comments = @item.comments.includes(:user)
