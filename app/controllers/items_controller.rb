@@ -37,22 +37,15 @@ class ItemsController < ApplicationController
     end
   end
 
-#   def destroy
-#     item = Item.find(params[:id])re12
-#     Item.destroy
-#   end
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to root_path
+  end
 
-#   def edit
-#   end
-
-#   def update
-#     item = Items.find(params[:id])
-#     tweet.update(tweet_params)
-#   end
-
-def show
-  @item = Item.find(params[:id])
-end
+  def show
+    @item = Item.find(params[:id])
+  end
 
 #   def show
 #     @comment = Comment.new
