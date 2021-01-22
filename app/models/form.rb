@@ -12,7 +12,7 @@ class Form
     validates :item_id
     validates :user_id
     validates :postcode, format: { with: Post_code_validation }
-    validates :area_id
+    validates :area_id, numericality: { other_than: 0 }
     validates :municipality
     validates :address
     validates :tel, length: { maximum: 11 },format: { with: Half_width_numbers }
