@@ -1,20 +1,22 @@
 class Form
   include ActiveModel::Model
-  attr_accessor :item_id, :user_id, :postcode, :area_id, :municipality, :address, :building_name, :tel #テーブルのカラムの代わり
+  attr_accessor :item_id, :user_id, :postcode, :area_id, :municipality, :address, :building_name, :tel, :token #テーブルのカラムの代わり
 
   # attr_accessor :item_id, :user_id, :postcode, :area_id, :municipality, :address, :building_name, :tel, :order_id #テーブルのカラムの代わり
 
   Half_width_numbers = /\A[0-9]+\z/
+  Post_code_validation = /\A\d{3}[-]\d{4}\z/
 
   #validationをaddress.rbとorder.rbから引っ張ってくる
   with_options presence: true do
     validates :item_id
     validates :user_id
-    validates :postcode
+    validates :postcode, format: { with: Post_code_validation }
     validates :area_id
     validates :municipality
     validates :address
-    validates :tel, format: { with: Half_width_numbers }
+    validates :tel, length: { maximum: 11 },format: { with: Half_width_numbers }
+    validates :token
   end  
 
   def save
