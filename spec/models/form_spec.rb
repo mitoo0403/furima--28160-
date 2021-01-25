@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Form, type: :model do
   before do
+    @item = FactoryBot.build(:item)
     @form = FactoryBot.build(:form)
   end
 
@@ -62,6 +63,16 @@ RSpec.describe Form, type: :model do
         @form.token = ""
         @form.valid?
         expect(@form.errors.full_messages).to include("Token can't be blank")
+      end
+      it "item_idが空だと購入できない" do
+        @form.item_id = ""
+        @form.valid?
+        expect(@form.errors.full_messages).to include("Item can't be blank")
+      end
+      it "user_idが空だと購入できない" do
+        @form.user_id = ""
+        @form.valid?
+        expect(@form.errors.full_messages).to include("User can't be blank")
       end
     end
   end

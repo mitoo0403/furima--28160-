@@ -21,8 +21,6 @@ class Form
 
   def save
      order = Order.create(item_id: item_id, user_id: user_id)
-    # 注文の情報を保存
-     Order.create(item_id: item_id, user_id: user_id)
     # 住所の情報を保存
      Address.create(postcode: postcode, area_id: area_id, municipality: municipality, address: address, building_name: building_name, tel: tel, order_id: order.id)
   end

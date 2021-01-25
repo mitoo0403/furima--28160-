@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, only: [:index, :create]
   before_action :set_item, only: [:index, :create]
   before_action :no_seller, only: [:index]
+  before_action :no_buy, only: [:index]
 
   def index
     @form = Form.new
@@ -45,6 +46,8 @@ class OrdersController < ApplicationController
     end
   end
 
-# def form_params
-#   params.require(:form).permit(:postcode, :area_id, :municipality, :address, :building_name, :tel, :order_id, :item_id).merge(user_id: current_user.id)
-# end
+  def no_buy
+    if @item.order.present?
+      redirect_to root_path
+    end
+  end
