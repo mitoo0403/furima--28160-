@@ -44,10 +44,20 @@ RSpec.describe Form, type: :model do
         @form.valid?
         expect(@form.errors.full_messages).to include("Address can't be blank")
       end
+      it "建物名が空でも購入できる" do
+        @form.building_name = ""
+        @form.valid?
+        expect(@form).to be_valid
+      end
       it "電話番号が空だと購入できない" do
         @form.tel = ""
         @form.valid?
         expect(@form.errors.full_messages).to include("Tel can't be blank")
+      end
+      it "電話番号が英数字混合だと購入できない" do
+        @form.tel = "090y78d3342"
+        @form.valid?
+        expect(@form.errors.full_messages).to include("Tel is invalid")
       end
       it "電話番号が11桁以上だと購入できない" do
         @form.tel = "090777773333"
