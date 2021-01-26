@@ -61,7 +61,7 @@ DB設計について
 - belongs_to :item
 - has_one :address
 
- ## addresses
+ ## addressesテーブル
 
 | Column        | Type        | Options                        |
 | ------------- | ----------- | ------------------------------ |
