@@ -2,13 +2,20 @@ require 'rails_helper'
 
 RSpec.describe Form, type: :model do
   before do
-    @item = FactoryBot.build(:item)
-    @form = FactoryBot.build(:form)
+    @item = FactoryBot.create(:item)
+    @user = FactoryBot.create(:user)
+    @form = FactoryBot.build(:form, user_id: @user.id, item_id: @item.id)
+    sleep 0.3
   end
 
   describe '商品購入' do
     context '購入がうまくいくとき' do
       it "トークン、郵便番号、都道府県、市区町村、番地、電話番号、item_id、user_idが存在すれば登録できる" do
+        expect(@form).to be_valid
+      end
+      it "建物名が空でも購入できる" do
+        @form.building_name = ""
+        @form.valid?
         expect(@form).to be_valid
       end
     end
@@ -44,11 +51,6 @@ RSpec.describe Form, type: :model do
         @form.valid?
         expect(@form.errors.full_messages).to include("Address can't be blank")
       end
-      it "建物名が空でも購入できる" do
-        @form.building_name = ""
-        @form.valid?
-        expect(@form).to be_valid
-      end
       it "電話番号が空だと購入できない" do
         @form.tel = ""
         @form.valid?
@@ -59,7 +61,7 @@ RSpec.describe Form, type: :model do
         @form.valid?
         expect(@form.errors.full_messages).to include("Tel is invalid")
       end
-      it "電話番号が11桁以上だと購入できない" do
+      it "電話番号が12桁以上だと購入できない" do
         @form.tel = "090777773333"
         @form.valid?
         expect(@form.errors.full_messages).to include("Tel is too long (maximum is 11 characters)")
